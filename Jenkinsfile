@@ -1,21 +1,19 @@
 pipeline {
-    agent any
+    agent none
     stages{
         stage('Build') {
             steps {
-                sh '/opt/script-directory/validate.sh'
+                echo 'Building...'
             }
         }
         stage('Test') {
             steps {
-                mail bcc: '', body: "Confirmation de job: ${JOB_URL}", cc: '', from: '', replyTo: '', 
-                subject: "Job '${env.JOB_NAME}', Build (${env.BUILD_NUMBER}) attente de confirmation !", to: 'ouftou@gmail.com'
-                input 'Voulez-vous autoriser le déploiement ?'
+                echo 'Testing...'
             }
         }
         stage('Deploy') {
             steps {
-                sh '/opt/script-directory/deploy.sh'
+                echo 'Deploy...'
             }
         }
     }
