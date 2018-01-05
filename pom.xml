@@ -13,19 +13,23 @@
 	</distributionManagement>
 
 	<scm>
-	   <connection>scm:git:https://github.com/user/project.git</connection>
-	   <url>http://github.com/user/project</url>
-	   <developerConnection>scm:git:https://github.com/user/project.git</developerConnection>
+	   <connection>scm:git:https://github.com/zouftou/dev.git</connection>
+	   <url>http://github.com/zouftou/dev</url>
+	   <developerConnection>scm:git:https://github.com/zouftou/dev.git</developerConnection>
 	</scm>
 
-	<plugin>
-	   <groupId>org.apache.maven.plugins</groupId>
-	   <artifactId>maven-release-plugin</artifactId>
-	   <version>2.4.2</version>
-	   <configuration>
-		  <tagNameFormat>v@{project.version}</tagNameFormat>
-		  <autoVersionSubmodules>true</autoVersionSubmodules>
-		  <releaseProfiles>releases</releaseProfiles>
-	   </configuration>
-	</plugin>
+  <build>
+  <plugins>
+    <plugin>
+       <groupId>org.apache.maven.plugins</groupId>
+       <artifactId>maven-release-plugin</artifactId>
+       <version>2.4.2</version>
+       <configuration>
+        <tagNameFormat>v@{project.version}</tagNameFormat>
+        <autoVersionSubmodules>true</autoVersionSubmodules>
+        <releaseProfiles>releases</releaseProfiles>
+       </configuration>
+    </plugin>
+   </plugins>
+  </build>
 </project>
